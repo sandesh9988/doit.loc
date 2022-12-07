@@ -1,15 +1,26 @@
 // Sizes
 $base-font-size: 16px;
 $ratio: 1.414;
-$container: 1216px;
-$site-width: 1216px;
+$container: 1290px;
+$site-width: 1354px;
 
 // Colors
-$black: #333333;
+$black: #000000;
+
+$white: #ffffff;
+$primary: #0040BF;
+$primary-alt: #6299FF;
+$primary-text: #1B2334;
+$secondary: #F8F8F8;
+$secondary-alt: #D8D8D8;
+$tertiary: #2B3852;
+$quaternary: #62FFA9 ;
+$alt:  #FFFF00 ;
+$black-dark: #091115;
+$tertiary-alt: #979797;
 
 // Fonts
-$primary-family: 'Helvetica', sans-serif;
-$alt-family: 'Open Sans', sans-serif;
+$primary-family: 'Inter', sans-serif;
 
 // Media Queries
 $tablet-width: 768px;
@@ -52,60 +63,3 @@ $github: #703083;
     @return ( $px_value / $base-font-size ) + rem;
 }
 
-// Mixins
-@mixin transform( $transforms ) {
-    -moz-transform: $transforms;
-    -o-transform: $transforms;
-    -ms-transform: $transforms;
-    -webkit-transform: $transforms;
-    transform: $transforms;
-}
-
-@mixin transform-origin( $origin ) {
-    -moz-transform-origin: $origin;
-    -o-transform-origin: $origin;
-    -ms-transform-origin: $origin;
-    -webkit-transform-origin: $origin;
-    transform-origin: $origin;
-}
-
-@mixin transform-perspective( $perspective ) {
-    -moz-transform-perspective: $perspective;
-    -o-transform-perspective: $perspective;
-    -ms-transform-perspective: $perspective;
-    -webkit-transform-perspective: $perspective;
-    transform-perspective: $perspective;
-}
-
-@mixin transition( $transition-property, $transition-time, $method ) {
-    -webkit-transition: $transition-property $transition-time $method;
-    -moz-transition: $transition-property $transition-time $method;
-    -ms-transition: $transition-property $transition-time $method;
-    -o-transition: $transition-property $transition-time $method;
-    transition: $transition-property $transition-time $method;
-}
-
-@mixin animation($name, $duration, $iteration_count, $timing_function, $fill-mode, $delay:0s) {
-    // The -webkit- animation value NEEDS the delay in it, the plain animation value will break with it.
-    // And Firefox needs units with the delay number, even if it's 0.
-    -webkit-animation: $name $duration $delay $iteration_count $timing_function $fill-mode;
-    animation: $name $duration $delay $iteration_count $timing_function $fill-mode;
-
-}
-
-@mixin anything($property, $value) {
-    -webkit-#{$property}: $value;
-    -moz-#{$property}: $value;
-    -ms-#{$property}: $value;
-    -o-#{$property}: $value;
-    #{$property}: $value;
-}
-
-@mixin prefix($property, $value, $vendors: webkit moz ms o) {
-    @if $vendors {
-        @each $vendor in $vendors {
-            #{"-" + $vendor + "-" + $property}: #{$value};
-        }
-    }
-    #{$property}: #{$value};
-}
