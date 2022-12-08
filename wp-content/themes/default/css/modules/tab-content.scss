@@ -1,0 +1,119 @@
+.tab-content {
+    background-color: $primary-text;
+    padding: 80px 0;
+    > .container {
+      display: flex;
+      gap: 30px;
+      @media #{$header} {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+  
+  .tab-content__left {
+    width: 65.9%;
+    @media #{$header} {
+      width: 100%;
+    }
+  }
+  
+  .tab-content__lists {
+    border-bottom: 1px solid $tertiary-alt;
+    display: flex;
+    gap: 41px;
+    padding-bottom: 12px;
+    @media only screen and (max-width: 500px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .tab-content__btn {
+      font-family: $primary-family;
+      font-weight: 600;
+      @include fsz(16px);
+      line-height: 0.82;
+      text-transform: uppercase;
+      color: $white;
+    }
+    button:hover {
+      text-decoration: underline 3px;
+      text-underline-offset: 12px;
+    }
+    button.active {
+      text-decoration: underline 3px;
+      text-underline-offset: 12px;
+    }
+  }
+  
+  .tab-content__contents {
+    font-family: $primary-family;
+    font-weight: 500;
+    @include fsz(24px);
+    color: $white;
+    opacity: 0.9;
+    margin-top: 40px;
+  }
+  
+  .tab-content__link {
+    a {
+      font-family: $primary-family;
+      font-weight: 500;
+      @include fsz(18px);
+      color: $primary-alt;
+  
+      &:hover {
+        color: $quaternary;
+      }
+    }
+    svg {
+      transform: rotate(-90deg);
+      width: 12px;
+      height: 8px;
+      margin-left: 8px;
+    }
+  }
+  
+  .tab-content__right {
+    width: 31.8%;
+    @media #{$header} {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+    fieldset {
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      text-align: center;
+      padding: 40px 30px 37px;
+  
+      legend {
+        padding: 3px 31px;
+        background-color: $white;
+        font-family: $primary-family;
+        font-weight: 600;
+        @include fsz(12px);
+        line-height: 0.82;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        color: $primary-text;
+      }
+    }
+  }
+  
+  .tab-content__news {
+    font-family: $primary-family;
+    font-weight: 600;
+    @include fsz(24px);
+    letter-spacing: -0.2px;
+    color: $white;
+    opacity: 0.9;
+    margin-bottom: 30px;
+    text-align: left;
+    .tab-content__title {
+      font-weight: 400;
+      @include fsz(12px);
+      line-height: 0.82;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      opacity: 0.75;
+      margin-bottom: 5px;
+    }
+  }
+  

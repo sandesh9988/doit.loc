@@ -1,0 +1,84 @@
+.card {
+    background-color: $secondary;
+    padding: 80px 0;
+    > .container {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      flex-wrap: wrap;
+      // @media #{$desktop} {
+      //   flex-direction: column;
+      //  }
+    }
+  }
+  
+  .card__article {
+    max-width: 410px;
+    width: 100%;
+    @media #{$header}{
+      display: flex;
+      max-width: 100%;
+    }
+    @media #{$phone}{
+      max-width: 410px;
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+  .card__link {
+    svg {
+      transform: rotate(270deg);
+    }
+  }
+  
+  .card__media {
+    overflow: hidden;
+  
+    
+    img {
+      max-width: 410px;
+    width: 100%;
+    height: 177px;
+      object-fit: cover;
+      
+    }
+  }
+  
+  .card__content {
+    
+    padding: 20px;
+    background-color: $white;
+    font-family: $primary-family;
+    font-weight: 400;
+    @include fsz(15px);
+    line-height: 1.29;
+    letter-spacing: 0.176471px;
+    color: $primary-text;
+  
+    .card__heading {
+      font-family: $primary-family;
+      font-weight: 600;
+      @include fsz(25px);
+      line-height: 1.76;
+      color: $primary-text;
+    }
+  }
+  
+  .card__link {
+    margin-top: 35px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    a {
+      font-family: $primary-family;
+      font-weight: 600;
+      @include fsz(16px);
+      line-height: 0.94;
+      color: $primary-text;
+  
+      &:hover {
+        color: $primary-alt;
+      }
+    }
+  }
+  
